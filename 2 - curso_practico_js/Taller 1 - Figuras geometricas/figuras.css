@@ -1,0 +1,135 @@
+:root{
+    --orange-red : #f72c25;
+    --very-light-gray: #f7f0f5;
+    --blue-sky: #32cbff;
+    --shadow-blue: #2D82B7;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-header{
+    width: 100%;
+}
+
+.main-header > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-titulo{
+    width: 50px;
+    height: 50px;
+    margin-right: 16px;
+}
+
+.main-header h1 {
+    color: var(--orange-red)
+}
+
+.main-header > p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.calculos {
+    background-color: var(--very-light-gray);
+    border-radius: 12px;
+    width: 100%;
+}
+
+.calculos-container{
+    width: 80%;
+    margin: 40px auto;
+    padding: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-container{
+    padding: 20px;
+    width: 300px;
+    height: 600px;
+    border: 1px solid var(--orange-red);
+    border-radius: 16px;
+    box-sizing: border-box;
+    margin: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container .seccion-titulo{
+    color: var(--blue-sky);
+    text-align: center;
+    margin-top: 0;
+}
+
+.form-container > form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.form-container label{
+    font-size: 0.9rem;
+    margin: 0 0 12px 0;
+    display: block;
+}
+
+.form-container input {
+    border: none;
+    border: 1px solid transparent;
+    outline: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto 12px auto; 
+}
+
+.form-container input:hover{
+    border: 1px solid var(--orange-red);
+    transition: .3s;
+}
+
+.form-container .botones{
+    height: 125px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    position: absolute ;
+    justify-content: end;
+    width: inherit;
+    box-sizing: border-box;
+    bottom: 20px;
+}
+
+.form-container .botones > button{
+    border:none;
+    margin-bottom: 10px;
+    padding: 12px;
+    background-color: var(--shadow-blue);
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 1332px ) {
+    .form-container{
+        margin-bottom: 24px;
+    }
+}
+
+@media screen and (max-width: 699px ) {
+    .calculos-container{
+        width: 95%;
+    }
+}
