@@ -36,6 +36,9 @@ const obtenerContexto = ({nombre, clave, edad, rango = 'Capitan'}) => {
 
 const avenger = obtenerContexto(persona);
 
+// const {nombreClave, anios, latitudLongitud} = avenger;
+// const {latitud, longitud} = latitudLongitud
+
 const {nombreClave, anios, latitudLongitud: {latitud, longitud}} = avenger;
 //ESTAMOS DESESTRUCTURANDO AL OBJETO latitudLongitud en las variable que lo componen
 console.log(nombreClave, anios, latitud, longitud)
