@@ -5,7 +5,7 @@ const apiKey = 'KUQH6lmIU6fEYVnOCK0ipbIPMBvLQz7o';
 //https://developers.giphy.com/docs/api/endpoint#random
 
 const peticion = fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`);
-//fetch devuelve una promera
+//fetch devuelve una promesa
 
 peticion//la promesa que devuelve fetch tiene el metodo json el cual devuelve otra promesa
     .then(resp => resp.json() )//PODEMOS ENCADENAR LAS PROMESAS

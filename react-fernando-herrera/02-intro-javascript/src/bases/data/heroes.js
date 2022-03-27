@@ -1,8 +1,7 @@
 //Exportamos la constante llamada heroes
 //Esto sirve para importalo desde otro archivo con:
 //import {hereos} from './data/heroes.js'
-//export const heroes = [ ESTE ARCHIVO LO UNICO QUE HACE ES 
-                    //EXPORTAR ESTA CONSTANTE HEROES
+//export const heroes
 
 //export default [// NO ES MUY RECOMENDABLE USARLO ASÍ
 const heroes = [    

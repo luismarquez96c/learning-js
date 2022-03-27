@@ -9,7 +9,7 @@
 //NO ES EL NOMBRE DEL ARCHIVO NI DEL ARREGLO, NOSOTROS LO DEFINIMOS
 //ES DECIR, HEROES PODRÍA LLAMARSE heroes_array SI QUISIERAMOS
 //import {heroes,owners} from './data/heroes.js' IMPORTACION CUANDO AMBOS RECURSOS NO SON POR DEFECTO
-//OWNERS NO ES EXPORTACIÓN POR DEFECTO
+
 import heroes, {owners} from './data/heroes.js';//IMPORTACION DE HEROES (POR DEFECTO) Y OWNERS (EXPORTACION INDIVIDUAL)
 
 const getHeroeById = id => heroes.find( heroe => heroe?.id === id );

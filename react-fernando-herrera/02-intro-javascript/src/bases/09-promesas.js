@@ -24,19 +24,18 @@ import getHeroeById, {getHeroeByOwner} from "./bases/08-import-export.js";
  */
 const getHeroeByIdAsync = id => {
 
-    return new Promise( (resolve, reject) =>{//EL CALLBACK SE EJECUTA DE FORMA SINCRONA AL CREAR LA PROMESA
+    return new Promise( (resolve, reject) =>{
         setTimeout(() => {
             const heroe = getHeroeById(id);
 
+            //OPCION 1
             // heroe && resolve(heroe);//if
             // heroe || reject(`Heroe con id ${id} no encontrado`);//else
             
+            //OPCION 2
             if(heroe) resolve(heroe);
             else reject(`Heroe con id ${id} no encontrado`);
             
-            resolve(heroe);//MARCAMOS LA PRIMESA COMO EXITOSA CON EL METODO RESOLVE
-            //RESOLVE ENVIA COMO ARGUMENTO EL OBJETO heroe A LA FUNCION THEN
-            // reject('No se puedo encontrar el héroe');//REJECT MARCA LA PROMESA COMO FALLIDA. ENVIA UN PARAMETRO QUE SE USADO POR EL CALLBACK DEL METOD CATCH
         }, 2000);
     } );
 
