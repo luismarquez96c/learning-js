@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+
+    <title>Capacidad de ahorro</title>
+</head>
+<body>
+    
+    <header class="main-header">
+        <figure class="main-logo">
+            <a class="main-logo_img" href="./capacidadAhorro.html">
+                <img src="./img/logo-presupuesto.png" alt="logo presupuesto">
+            </a>
+            <h1 class="main-logo_title" >Calculadora de Capacidad de ahorro por páis</h1>
+        </figure>
+    </header>
+
+    <section class="calculator-section" >
+
+        <div class="country-selector">
+            <span class="country-selector-title">Selecciona los paises a comparar</span>
+            <select id="country1" class="country-selector_item" name=""></select>
+            <select id="country2" class="country-selector_item" name=""></select>
+        </div>
+
+        <div class="contry-data">
+            <div id="country-data1" class="country-data_item">asd</div>
+            <div id="country-data2" class="country-data_item">123</div>
+        </div>
+
+        <div class="country-results">
+            <p class="result-title">Resultados</p>
+            <div class="country-results-item">
+                <p id="country-title1" class="country-results-subtitle"></p>
+
+                <p class="result-media">
+                    Media: <span id="media1" class="result-media_value"></span>
+                </p>
+                <p class="result-mediana">
+                    Mediana: <span id="mediana1" class="result-mediana_value"></span>
+                </p>
+            </div>
+
+            <div class="country-results-item">
+                <p id="country-title2" class="country-results-subtitle"></p>
+                <p class="result-media">
+                    Media: <span id="media2" class="result-media_value"></span>
+                </p>
+                <p class="result-mediana">
+                    Mediana: <span id="mediana2" class="result-mediana_value"></span>
+                </p>
+            </div>
+
+            <div id="country-results-conclusion" class="country-results-conclusion">
+                En base a la mediana de ambos paises evaluados, se concluye que <span id="country-result" class="country-results_strongtext">
+                </span>
+            </div>
+        </div>
+        <div class="country-results-btn">
+            <button id="calcularResultados" type="button">Calcular</button>
+        </div>
+    </section>
+
+    <script src="./dataPaises.js"></script>
+    <script src="./capacidadAhorro.js"></script>
+</body>
+</html>
