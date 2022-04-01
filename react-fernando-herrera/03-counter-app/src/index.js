@@ -1,9 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import PrimeraApp from "./PrimeraApp";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import CounterApp from './CounterApp';
 import './index.css';
-const divRoot = document.querySelector('#root');
 
-//saludo es lo que quiero mostrar
-//divRoot es dónde lo quiero mostrar
-ReactDOM.render( <PrimeraApp />, divRoot);
+const divRoot = document.getElementById('root');
+
+ReactDOM.render( <CounterApp value = {10} />,  divRoot);
