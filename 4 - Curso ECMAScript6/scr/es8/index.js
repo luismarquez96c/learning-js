@@ -19,7 +19,7 @@ const values = Object.values(data2);
 console.log(values);//DEVUELVE MI OBJETO COMO UN ARREGLO DE UNA DIMENSIÓN
 
 
-//3. SE AGREGO EL METODO String.prototype.padStart el cual rellenar la cadena actual con una 
+//3. SE AGREGO EL METODO String.prototype.padStart el cual rellena la cadena actual con una 
 //  cadena dada ha modo que la cadena actual alcance una longitud dada.
 
 const string = 'Hello';
@@ -42,12 +42,27 @@ const data3 = {
 //5. SE AGREGARON LAS keywords Asycn y Await
 const helloWorld = () => {
     return new Promise( (resolve, reject) => {
-        (true)
+        (false)
         ? setTimeout(() => resolve('Hello World'), 3000) 
-        : reject(new Error('Test Error'));
+        : reject( new Error('Test Error') );
     } );
 }
 
-const helloAsync = async () => {
-
+const helloAsync = async () => {//INDICA QUE ADENTRO DE ESTA FUNCIÓN HAY UN PROCESO ASINCRONO
+    const hello = await helloWorld(); //SE LLAMA AUTOMATICAMENTE AL METODO then Y SE OBTIENE SU VALOR
+    console.log(hello);
 };
+
+helloAsync();
+
+//--------------------------------------
+const anotherFunction = async () => {
+    try{
+        const hello = await helloWorld();
+        console.log(hello);
+    }catch(error) {//SI DENTRO DE LA PROMESA SE LLAMA AL METODO REJECT ENTONCES EL ERROR LANZADO POR REJECT SE MOSTRARÁ AQUÍ
+        console.log(error);
+    }
+}
+
+anotherFunction();
