@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "01-conceptos.js",
+  "type": "module",
   "scripts": {
-    "callback": "node src/callback/02-calbacks-init.js",
-    "callback:challenge": "node src/callback/03-challange.js"
+    "callback": "node src/01_callback/02-calbacks-init.js",
+    "callback:challenge": "node src/callback/03-challange.js",
+    "promise:challenge": "node src/02_promise/02-challenge.js"
   },
   "author": "luis márquez",
   "license": "MIT",
