@@ -1,5 +1,5 @@
 //1. SE AGREGO DINAMICS IMPORTS: REALIZAR UN IMPORT DE FORMA DINAMICA
-// ESTO SE AGREGO PARA QUE LA APLICACION NO CARGUE ARCHIVO QUE SON NECESARIOS
+// ESTO SE AGREGO PARA QUE LA APLICACION NO CARGUE ARCHIVOS QUE SON NECESARIOS
 const button  = document.getElementById('btn');
 button.addEventListener('click', async function () {
     const module = await import('./file.js');//IMPORTAMOS EL ARCHIVO file.js DE FORMA DINÁMICA.

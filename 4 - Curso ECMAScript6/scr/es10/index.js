@@ -21,7 +21,7 @@ console.log(hello.trim());//ESTE METODO YA EXISTÍA
 console.log(hello.trimStart);
 console.log(hello.trimEnd);
 
-// 3. SE AGREGO DE OPCIONAL CATCH BINDING: PASAR DE FORMA OPCIONAL EL PARAMETRO DE ERROR AL BLOQUE CATCH
+// 3. SE AGREGO EL OPCIONAL CATCH BINDING: PASAR DE FORMA OPCIONAL EL PARAMETRO DE ERROR AL BLOQUE CATCH
 
 try{
     throw new Error('Error de prueba');

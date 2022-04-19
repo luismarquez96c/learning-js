@@ -47,7 +47,7 @@ helloWorld()
     .catch( console.error)
     .finally( () => console.log('Finalizo') )//AL FINALIZAR EL .then O .catch SE MANZARÁ A LLAMAR EL CALLBACK
 
-// 4. SE AGREGO LA AGRUPACIÓN DE BLOQUES DE REGEX EN ACCEDER A CADA UNO DE ELLOS.
+// 4. SE AGREGO LA AGRUPACIÓN DE BLOQUES DE REGEX Y PODER ACCEDER A CADA UNO DE ELLOS.
 
 const regexData = /([0-9]{4})-([0-9]{2})-([0-9]{2})/;
 

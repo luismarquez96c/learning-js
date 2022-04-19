@@ -1,0 +1,23 @@
+{
+  "name": "random-messages-lgmarquez",
+  "version": "1.0.0",
+  "description": "random de mensajes",
+  "main": "src/index.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "random",
+    "messages",
+    "javascript",
+    "node",
+    "npm"
+  ],
+  "author": "luis marquez <luismarquez96c@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "random-msg": "./bin/global.js"
+  },
+  "preferGlobal": true
+}
