@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function* idMaker(){
+            let id = 1;
+            while(true){
+                yield id++;
+            }
+
+        }
+        const gen = idMaker();
+        gen.next();
+        gen.next();
+        gen.next();
+        
+        /**
+         * Pasar al metodo next un valor trusty para resetear generador a 1.
+         */
+        function* idMakerWidthReset(){
+            let id = 1;
+            let reset;
+            while(true){
+                reset = yield id;//Al llamar metodo next(true), yield devolverá el argumento de next
+                Boolean(reset) ? 
+                id = 1
+                : id++;
+            }
+            
+        }
+        const gen2 = idMakerWidthReset();
+        gen2.next();//1
+        gen2.next();//2
+        gen2.next();//3
+        gen2.next();//4
+        gen2.next(true);//1
+        gen2.next();//2
+        
+    </script>
+</body>
+</html>

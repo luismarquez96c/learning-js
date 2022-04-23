@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        //1.
+        // const heroMethos = {
+        //     saludar: function(){
+        //         console.log(`Me llamo ${this.name}`);
+        //     }
+        // }
+
+        // function Hero(name){
+        //     const hero = {
+        //         name
+        //     };
+        //     hero.saludar = heroMethos.saludar;
+        //     return hero;
+        // }
+
+        // const zelda = Hero('Zelda');
+        // zelda.saludar();
+
+        // const link = Hero('link');
+        // link.saludar();
+
+
+        //2.
+        // const heroMethos = {
+        //     saludar: function(){
+        //         console.log(`Soy super vishano! ${this.name}`);
+        //     }
+        // }
+
+        // function Hero(name){
+        //     const hero = Object.create(heroMethos);
+        //     hero.name = name;
+        //     return hero;
+        // }
+
+        // const zelda = Hero('Zelda');
+        // zelda.saludar();
+
+        // const link = Hero('link');
+        // link.saludar();        
+        // /**
+        // Si vamos al inspectos y revisamos el objeto link o zelda veremos que es un objeto vacio, es decir
+        // solo cuenta con su propiedad __proto__ y dentro de esta está la función saludar definida en heroMethos
+        //  */ 
+        
+        // const heroMethos = {
+        //     saludar: function(){
+        //         console.log(`Soy super vishano! ${this.name}`);
+        //     }
+        // }
+
+        // function Hero(name){
+        //     const hero = Object.create(Hero.prototype);
+        //     hero.name = name;
+        //     return hero;
+        // }
+
+        // Hero.prototype.saludar = function(){
+        //     console.log(`Soy super vishano! ${this.name}`);
+        // }
+
+        // const zelda = Hero('Zelda');
+        // zelda.saludar();
+
+        // const link = Hero('link');
+        // link.saludar();              
+
+        function Hero(name){
+            // this = Object.create(Hero.prototype);
+            this.name = name;
+            // return this;
+        }
+
+        Hero.prototype.saludar = function(){
+            console.log(`New: ${this.name}`);
+        }
+
+        const zelda = new Hero('Zelda');
+        zelda.saludar();
+
+        const link = new Hero('link');
+        link.saludar();   
+
+        </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <button class="button">Button 1</button>
+    <button class="button">Button 2</button>
+    <button class="button">Button 3</button>
+
+    <script>
+      //1. establecer this usando call
+      function saludar() {
+        console.log(`Hola soy ${this.name} ${this.lastname}`);
+      }
+
+      const richard = {
+        name: "Richard",
+        lastname: "Lopez",
+      };
+
+      saludar.call(richard); //Hola soy Richard Lopez
+
+      // Metodo call con argumentos: recibe argumentos variables en el argumento 2
+      function caminar(metros, direccion) {
+        console.log(
+          `${this.name} camina ${metros} metros hacia el ${direccion}`
+        );
+      }
+
+      caminar.call(richard, 120, "sur");
+
+      //2. el metodo apply hace lo mismo que el metodo call pero sus argumentos los pasamos de una forma diferente
+      //El argumento 2 es un array con parametros
+      caminar.apply(richard, [800, "norte"]); //Richard camina 800 metros hacia el norte
+
+      //3. el metodo bind construye una nueva función a apartir de la función original y los argumentos que le pasamos
+      const daniel = { name: "Daniel", lastname: "Sanchez" };
+      saludar.bind(daniel); //NO SE ESTÁ LLAMANDO, RETORNA UNA FUNCIÓN NUEVA
+      const saludarDaniel = saludar.bind(daniel);
+      saludarDaniel(); //Hola soy Daniel Sanchez
+
+      //BIND con argumentos
+      let nuevoCaminar = caminar.bind(daniel, 1500, "este");
+      nuevoCaminar(); //Daniel camina 1500 metros hacia el este
+
+      //El metodo bind también se puede utilizar así:
+
+      //1.
+      nuevoCaminar = caminar.bind(daniel);
+      nuevoCaminar(1354, "oeste"); //Daniel camina 1354 metros hacia el oeste
+
+      //2.
+      nuevoCaminar = caminar.bind(daniel, 2000);
+      nuevoCaminar("sur"); //Daniel camina 2000 metros hacia el sur
+
+      //------------------------------
+      //------------------------------
+      /*
+Cuando obtenemos varios elementos del DOM no obtenemos un array sino un node list y por tanto no podemos
+acceder al metodo forEach directamente, entonces, podemos hacer:
+*/
+
+      const buttons = document.getElementsByClassName("button");
+
+      const addEventListenerToButton = (button) =>
+        (button.onclick = () => alert("Acción!!"));
+      Array.prototype.forEach.call(buttons, addEventListenerToButton);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            box-shadow: 0 1px 0 0 black;
+        }
+    </style>
+    <img  alt="">
+
+    <button id="btnLoadImg">Load image</button>
+    <button id="btnAbort">Abort...</button>
+
+    <script>
+        const btnLoad = document.getElementById('btnLoadImg');
+        const btnAbort = document.getElementById('btnAbort');
+        let controller = null;
+
+        function startRequest(){
+            btnLoad.disabled = true;
+            btnLoad.innerText = 'Loading ...';
+            btnAbort.disabled = false;
+        }
+        
+        function stopRequest(){
+            btnLoad.disabled = false;
+            btnLoad.innerText = 'Load image';
+            btnAbort.disabled = true;
+        }
+
+        btnLoad.addEventListener('click', async () => {
+            startRequest();
+            const url = 'https://images.pexels.com/photos/974470/nature-stars-milky-way-galaxy-974470.jpeg?q=100';
+            controller = new AbortController();
+
+            try{
+                const response = await fetch(url, {signal: controller.signal});
+                const blob = await response.blob();
+    
+                const urlImg = URL.createObjectURL(blob);
+
+                document.querySelector('img').src = urlImg;
+                
+            }catch(err){
+                console.log(err.message)
+            }
+
+
+            stopRequest();
+
+        });
+
+        btnAbort.addEventListener('click', () => {
+            console.log('abort')
+            controller.abort();
+            stopRequest();
+        });
+
+
+
+
+    </script>
+
+</body>
+</html>
