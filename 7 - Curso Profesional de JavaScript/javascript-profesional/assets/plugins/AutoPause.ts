@@ -1,4 +1,9 @@
+import MediaPlayer from "../MediaPlayer";
+
 class AutoPause {
+
+    private threshold: number;
+    private player: MediaPlayer;
 
     constructor(){
         this.threshold = 0.25;//UMBRAL
@@ -19,8 +24,8 @@ class AutoPause {
         observer.observe(player.media);//Registrando objeto observado
     }
 
-    handlerIntersection(entries) {//entries solo contiene el unico objeto observado
-        const entry = entries.pop();
+    private handlerIntersection(entries: IntersectionObserverEntry[]) {//entries solo contiene el unico objeto observado
+        const entry = entries[0];
         const isVisible = entry.intersectionRatio > this.threshold;
 
         if(isVisible){
