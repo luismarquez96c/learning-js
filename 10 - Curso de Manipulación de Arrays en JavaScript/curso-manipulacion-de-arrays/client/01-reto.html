@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+
+    <style>
+        *, *::after, *::before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+        
+        header{
+            width: 100%;
+            max-width: 1024px;
+            background-color: blue;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            line-height: 3rem;
+            color: white;
+        }
+
+        .tareas {
+            margin-top: 100px;
+            display: grid;
+
+            grid-template-columns: repeat(3, minmax(100px, 250px));
+            grid-auto-rows: 250px;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .tarea-container {
+            border: 1px solid #333;
+            border-top-left-radius: 24px;
+            padding: 8px;
+        }
+
+        .tarea--title{
+            font-size: 2rem;
+            line-height: 2.2rem;
+            margin: 12px 0;
+        }
+        
+        .tarea--descripcion {
+            font-size: 1.6rem;
+            line-height: 1.8rem;
+            margin: 12px 0;
+        }
+
+        .tarea--estatus {
+            background-color: #666;
+            border: none;
+            border-radius: 12px;
+            padding: 8px 16px;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .tarea--estatus__realizada {
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Mi lista de tareas</h1>
+    </header>
+
+    <main>
+        <section id="tareas" class="tareas">
+        </section>
+    </main>
+
+    <script>
+
+        const tareas = [
+            {
+                title: "Titulo de la tarea",
+                descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione dolorum vero beatae. Quasi earum ad autem. Iste, quae minus maxime laboriosam perferendis aliquam vero odio aperiam ab qui, consectetur ex.",        
+                estatus: 1
+            },
+            {
+                title: "Titulo de la tarea",
+                descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione dolorum vero beatae. Quasi earum ad autem. Iste, quae minus maxime laboriosam perferendis aliquam vero odio aperiam ab qui, consectetur ex.",        
+                estatus: 0
+            },
+            {
+                title: "Titulo de la tarea",
+                descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione dolorum vero beatae. Quasi earum ad autem. Iste, quae minus maxime laboriosam perferendis aliquam vero odio aperiam ab qui, consectetur ex.",        
+                estatus: 1
+            },
+            {
+                title: "Titulo de la tarea",
+                descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione dolorum vero beatae. Quasi earum ad autem. Iste, quae minus maxime laboriosam perferendis aliquam vero odio aperiam ab qui, consectetur ex.",        
+                estatus: 0
+            },
+
+        ];
+
+    const tareasContainer = document.getElementById('tareas');
+    
+    tareas.map( tarea => {
+
+        const tareaContainer = document.createElement('div');
+        tareaContainer.className = 'tarea-container';
+
+        const title = document.createElement('p');
+        title.className = 'tarea--title';
+
+        const descripcion = document.createElement('p');
+        descripcion.className = 'tarea--descripcion';
+
+        const estatus = document.createElement('button');
+        estatus.classList.add('tarea--estatus');
+
+        if(Boolean(tarea.estatus)) {
+            estatus.classList.add('tarea--estatus__realizada');
+        }
+
+        tareaContainer.appendChild(title);
+        tareaContainer.appendChild(descripcion);
+        tareaContainer.appendChild(estatus);
+
+
+        title.innerHTML = tarea.title;
+        descripcion.innerHTML = tarea.descripcion;
+        estatus.innerText = Boolean(tarea.estatus) ? 'Realizada' : "Pendiente";
+        tareasContainer.appendChild(tareaContainer);
+
+    } )
+
+
+
+    </script>
+
+</body>
+</html>
