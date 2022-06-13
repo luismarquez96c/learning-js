@@ -16,5 +16,8 @@
   },
   "browsersList": [
     "last 1 Chrome version"
-  ]
+  ],
+  "dependencies": {
+    "luismarquez96c-mediaplayer96c": "^1.0.1"
+  }
 }

@@ -7,7 +7,6 @@ class AutoPause {
 
     constructor(){
         this.threshold = 0.25;//UMBRAL
-        this.player = null;
         this.handlerIntersection = this.handlerIntersection.bind(this)
     }
 
